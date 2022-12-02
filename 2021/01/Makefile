@@ -1,0 +1,3 @@
+all:
+	# Shell
+	-@./solution.sh
