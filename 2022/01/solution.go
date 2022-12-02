@@ -7,6 +7,11 @@ import (
     "strconv"
 )
 
+func keep(list []int, n int) []int {
+    sort.Ints(list)
+    return list[len(list)-n:]
+}
+
 func main() {
     fd, _ := os.Open("input.txt")
     defer fd.Close()
@@ -22,11 +27,15 @@ func main() {
         } else if n, err := strconv.Atoi(line); err == nil {
             sum += n
         }
+
+        // Optional memory optimisation: whenever we have more than 100 elements, only keep the best 3
+        if len(list) > 100 {
+            list = keep(list, 3)
+        }
     }
     list = append(list, sum)
 
-    sort.Ints(list)
-
-    println(list[len(list)-1])
-    println(list[len(list)-1] + list[len(list)-2] + list[len(list)-3])
+    list = keep(list, 3)
+    println(list[2])
+    println(list[0] + list[1] + list[2])
 }

@@ -7,3 +7,4 @@ all:
 	-@./solution.py
 	# Rust
 	-@cargo single run solution.rs
+	-@rm -rf solution/
