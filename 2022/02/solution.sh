@@ -1,11 +1,17 @@
 #!/bin/sh
 
-# 0: rock  1: paper  2: scissors
+# For moves:
+#   0: rock  1: paper  2: scissors
+# For outcomes:
+#   0: loss  1: draw  2: win
 
-# $1: opponent  $2: player
-# (4+$2-$1)%3 → 0=loss 1=draw 2=win
-cat input.txt | tr ABCXYZ 012012 | awk '{a+=(1+$2)+(4+$2-$1)%3*3} END{print(a)}'
+# $1: opponent move  $2: player move
+# 1+$2 → score for playing
+# (4+$2-$1)%3*3 → score for outcome
 
-# $1: opponent  $2: outcome
-# x+0: for a draw  x+1: for a win  x+2: for a loss
-cat input.txt | tr ABCXYZ 012201 | awk '{x=($1+$2)%3; a+=(1+x)+(4+x-$1)%3*3} END{print(a)}'
+# $1: opponent move  $2: outcome
+# ($1+$2+2)%3 = what we should play
+# 1+($1+$2+2)%3 → score for playing
+# (4+($1+$2+2)%3-$1)%3*3 = $2*3 → score for outcome
+
+cat input.txt | tr ABCXYZ 012012 | awk '{a+=1+$2+($2-$1+4)%3*3;b+=1+($1+$2+2)%3+$2*3} END{print a"\n"b}'
