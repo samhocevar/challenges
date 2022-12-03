@@ -17,7 +17,7 @@ fn common_chars<T>(coll: T) -> HashSet<char>
     where T: IntoIterator<Item = String> {
     coll.into_iter()
         .map(|s| -> HashSet<char> { HashSet::from_iter(s.chars()) })
-        .reduce(|a, b| HashSet::from_iter(a.intersection(&b).map(|c| *c)))
+        .reduce(|a, b| &a & &b)
         .unwrap()
 }
 
@@ -36,9 +36,8 @@ fn main() -> Result<()> {
 
         // Score for problem 1
         for s in &v {
-            let mid = s.len() / 2;
-            s1 += score(common_chars(vec![s[..mid].to_owned(),
-                                          s[mid..].to_owned()]));
+            let (a, b) = s.split_at(s.len() / 2);
+            s1 += score(common_chars(vec![a.to_owned(), b.to_owned()]));
         }
 
         // Score for problem 2
