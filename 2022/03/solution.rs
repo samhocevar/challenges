@@ -7,8 +7,7 @@ use std::io::{prelude::*, BufReader, Result};
 fn score<T>(coll: T) -> i32
     where T: IntoIterator<Item = char> {
     coll.into_iter()
-        .map(|c| c as i32)
-        .map(|i| if i >= 'a' as i32 { 1 + i - 'a' as i32 } else { 27 + i - 'A' as i32 })
+        .map(|c| (c as i32 - 38) % 58) // -38 = 27-'A'   58 = 'a'-'A'+26
         .sum()
 }
 
