@@ -1,6 +1,6 @@
 use std::collections::BinaryHeap;
 use std::fs::File;
-use std::io::{prelude::*, BufReader, Result};
+use std::io::{BufReader, BufRead, Result};
 
 fn keep(mut h: BinaryHeap<i32>, n: i32) -> BinaryHeap<i32> {
     let mut ret = BinaryHeap::new();

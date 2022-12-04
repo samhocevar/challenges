@@ -1,7 +1,7 @@
 use itertools::Itertools;
 use std::collections::HashSet;
 use std::fs::File;
-use std::io::{prelude::*, BufReader, Result};
+use std::io::{BufReader, BufRead, Result};
 
 // Compute score for all chars in a collection (in our case there will only be one value)
 fn score<T>(coll: T) -> i32
