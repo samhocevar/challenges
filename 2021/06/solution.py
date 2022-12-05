@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-import sys
-
 s = [0] * 9
 
 with open('input.txt') as f:

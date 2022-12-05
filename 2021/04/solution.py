@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-import sys
-
 # List of masks that indicate a winning grid
 M0 = 0b11111
 M1 = 0b100001000010000100001
