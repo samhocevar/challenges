@@ -10,11 +10,11 @@ def move(rule):
         # Apply moves
         for l in f:
             n, a, b = (int(x) for x in l.split(' ')[1::2])
-            stacks[b-1] += stacks[a-1][-n:][::rule]
+            stacks[b-1] += stacks[a-1][-n:][::rule*2%3-1]
             stacks[a-1] = stacks[a-1][:-n]
         # Print last crate of each stack
         print(''.join(s[-1] for s in stacks))
 
-move(-1)
-move(1)
+move(9000)
+move(9001)
 
