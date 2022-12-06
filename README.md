@@ -19,3 +19,4 @@ Fiddling with https://adventofcode.com/
  6. [Python](/2021/06/solution.py)
  7. [Python](/2021/07/solution.py)
  8. [Bash](/2021/08/solution.sh) – [Python](/2021/08/solution.py)
+ 9. [Python](/2021/09/solution.py)
