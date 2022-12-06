@@ -7,6 +7,7 @@ Fiddling with https://adventofcode.com/
  3. [Python](/2022/03/solution.py) – [Rust](/2022/03/solution.rs)
  4. [Bash](/2022/04/solution.sh) – [Python](/2022/04/solution.py) – [Rust](/2022/04/solution.rs)
  5. [Python](/2022/05/solution.py)
+ 6. [Python](/2022/06/solution.py)
 
 # 2021
 
