@@ -25,6 +25,7 @@ Fiddling with https://adventofcode.com/
  12. [Python](/2021/12/solution.py)
  13. [Python](/2021/13/solution.py)
  14. [Python](/2021/14/solution.py)
+ 15. [Python](/2021/15/solution.py)
 
 # Links
 
