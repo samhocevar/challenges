@@ -20,3 +20,11 @@ Fiddling with https://adventofcode.com/
  7. [Python](/2021/07/solution.py)
  8. [Bash](/2021/08/solution.sh) – [Python](/2021/08/solution.py)
  9. [Python](/2021/09/solution.py)
+
+# Links
+
+ * https://github.com/tdesveaux/AdventOfCode2022
+ * https://github.com/diffty/AdventOfCode2022
+ * https://github.com/Darz4/AdventOfCode2022
+ * https://github.com/KerDelos/advent_of_code
+ * https://gitea.dont-nod.com/l.cahour/advent_of_code_2022
