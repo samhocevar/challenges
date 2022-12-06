@@ -1,0 +1,3 @@
+all:
+	# Python
+	-@./solution.py
