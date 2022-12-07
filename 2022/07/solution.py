@@ -14,7 +14,7 @@ with open('input.txt') as f:
             elif directory:
                 pwd += (directory,)
         elif line[0] == 'd':
-            sizes.setdefault(pwd + (line.split()[1],), 0)
+            sizes[pwd + (line.split()[1],)] = 0
         else:
             sizes[pwd] += int(line.split()[0])
 
