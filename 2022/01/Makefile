@@ -1,9 +1,9 @@
 all:
 	# Shell
-	-@./solution.sh
+	-@sh -c ./solution.sh
 	# Go
 	-@go run solution.go
 	# Python
-	-@./solution.py
+	-@python3 ./solution.py
 	# Rust
 	-@cargo run solution.rs

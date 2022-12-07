@@ -1,3 +1,3 @@
 all:
 	# Shell
-	-@./solution.sh
+	-@sh -c ./solution.sh

@@ -1,5 +1,5 @@
 all:
 	# Python
-	-@./solution.py
+	-@python3 ./solution.py
 	# Rust
 	-@cargo run solution.rs

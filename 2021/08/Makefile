@@ -1,5 +1,5 @@
 all:
 	# Shell
-	-@./solution.sh
+	-@sh -c ./solution.sh
 	# Python
-	-@./solution.py
+	-@python3 ./solution.py
