@@ -8,10 +8,9 @@ fn parse(s: &String, n: usize) -> usize {
     let back = s.chars().into_iter();
 
     // Initialise multiset with n-1 elements
-    for _ in 1..n {
-        stats.insert(front.next().unwrap());
-    }
+    (&mut front).take(n - 1).for_each(|ch| stats.insert(ch));
 
+    // Slide our window of width n and stop when all elements are distinct
     for (i, (f, b)) in zip(front, back).enumerate() {
         stats.insert(f);
         if stats.distinct_elements().count() == n { return i + n; }
