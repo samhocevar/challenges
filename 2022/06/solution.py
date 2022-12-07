@@ -1,12 +1,8 @@
 #!/usr/bin/env python
 
-import re
+# Read data using a sliding window of size n (zip + slices)
+# Get the first index where n different characters are found (len(set) == n)
 
-def matcher(n):
-    # (.)(?!\1)(.)(?!\1\2)(.)(?!\1\2\3) ...
-    return re.compile(''.join('(.)(?!' + '|'.join('\\'+str(1+j) for j in range(k)) + ')' for k in range(1,n)))
-
-with open('input.txt') as f:
-    data = f.read()
-    for n in [4, 14]:
-        print(n + next(matcher(n).finditer(data)).start(0))
+data = open('input.txt').read()
+for n in [4, 14]:
+    print(n + next(pos for pos, window in enumerate(zip(*(data[i:] for i in range(n)))) if len(set(window)) == n))
