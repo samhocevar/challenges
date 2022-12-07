@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import math
+import numpy as np
 
 with open('input.txt') as f:
     data = [int(x, 16) for x in next(f).strip()[::-1]]
@@ -32,37 +33,22 @@ def read_packet():
         while True:
             b = get_bits(5)
             n = (n << 4) | (b & 0xf)
-            if not (b & 0x10):
+            if b < 0x10:
                 return vsum, n
-    ltid = get_bits(1)
     s = []
-    if ltid == 0:
-        l = get_bits(15)
-        stop = offset + l
+    if get_bits(1) == 0:
+        stop = get_bits(15) + offset
         while offset < stop:
             s.append(read_packet())
     else:
-        n = get_bits(11)
-        for _ in range(n):
-            s.append(read_packet())
-    s = list(zip(*s))
-    vsum += sum(s[0])
+        s += [read_packet() for _ in range(get_bits(11))]
+    vsums, args = zip(*s)
     result = 0
-    if tid == 0:
-        result = sum(s[1])
-    elif tid == 1:
-        result = math.prod(s[1])
-    elif tid == 2:
-        result = min(s[1])
-    elif tid == 3:
-        result = max(s[1])
-    elif tid == 5:
-        result = int(s[1][0] > s[1][1])
-    elif tid == 6:
-        result = int(s[1][0] < s[1][1])
-    elif tid == 7:
-        result = int(s[1][0] == s[1][1])
-    return vsum, result
+    if tid < 4: # 0 1 2 3  →  + * min max
+        result = [sum, math.prod, min, max][tid](args)
+    elif tid > 4: # 5 6 7  →  > < ==
+        result = int(np.sign(args[0] - args[1]) == tid % 3 - 1)
+    return vsum + sum(vsums), result
 
 vsum, result = read_packet()
 
