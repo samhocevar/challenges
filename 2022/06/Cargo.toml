@@ -1,0 +1,11 @@
+[package]
+name = "solution"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+multiset = "0.0.5"
+
+[[bin]]
+name = "solution"
+path = "solution.rs"
