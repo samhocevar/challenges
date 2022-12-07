@@ -2,14 +2,6 @@ use std::collections::BinaryHeap;
 use std::fs::File;
 use std::io::{BufReader, BufRead, Result};
 
-fn keep(mut h: BinaryHeap<i32>, n: i32) -> BinaryHeap<i32> {
-    let mut ret = BinaryHeap::new();
-    for _ in 0..n {
-        match h.pop() { None => {}, Some(n) => ret.push(n) }
-    }
-    ret
-}
-
 fn main() -> Result<()> {
     let fd = File::open("input.txt")?;
 
@@ -22,11 +14,6 @@ fn main() -> Result<()> {
         match l?.parse::<i32>() {
             Ok(n) => sum += n,
             Err(_) => { heap.push(sum); sum = 0; },
-        }
-
-        // Optional memory optimisation: if more than 100 elements, keep only 3
-        if heap.len() > 100 {
-            heap = keep(heap, 3);
         }
     }
     heap.push(sum);
