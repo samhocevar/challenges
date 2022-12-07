@@ -1,14 +1,21 @@
 use std::fs;
+use std::iter::zip;
 use multiset::HashMultiSet;
 
 fn parse(s: &String, n: usize) -> usize {
     let mut stats: HashMultiSet<char> = HashMultiSet::new();
-    let chars: Vec<char> = s.chars().collect();
+    let mut front = s.chars().into_iter();
+    let back = s.chars().into_iter();
 
-    for i in 0..chars.len() {
-        stats.insert(chars[i]);
-        if i >= n { stats.remove(&chars[i - n]); }
-        if stats.distinct_elements().count() == n { return i + 1; }
+    // Initialise multiset with n-1 elements
+    for _ in 1..n {
+        stats.insert(front.next().unwrap());
+    }
+
+    for (i, (f, b)) in zip(front, back).enumerate() {
+        stats.insert(f);
+        if stats.distinct_elements().count() == n { return i + n; }
+        stats.remove(&b);
     }
     0
 }
