@@ -5,7 +5,7 @@ Fiddling with https://adventofcode.com/
 | | | | | |
 |---|---|---|---|---|
 | 1. [Bash](/2022/01/solution.sh) / [Python](/2022/01/solution.py) / [Go](/2022/01/solution.go) / [Rust](/2022/01/solution.rs) | 2. [Bash](/2022/02/solution.sh) | 3. [Python](/2022/03/solution.py) / [Rust](/2022/03/solution.rs) | 4. [Bash](/2022/04/solution.sh) / [Python](/2022/04/solution.py) / [Rust](/2022/04/solution.rs) | 5. [Python](/2022/05/solution.py) |
-| 6. [Python](/2022/06/solution.py) / [Rust](/2022/06/solution.rs) | 7. [Python](/2022/07/solution.py) | 8. [Python](/2022/08/solution.py) | 9. | 10. |
+| 6. [Python](/2022/06/solution.py) / [Rust](/2022/06/solution.rs) | 7. [Python](/2022/07/solution.py) | 8. [Python](/2022/08/solution.py) | 9. [Python](/2022/09/solution.py) | 10. |
 | 11. | 12. | 13. | 14. | 15. |
 | 16. | 17. | 18. | 19. | 20. |
 | 21. | 22. | 23. | 24. | 25. |
