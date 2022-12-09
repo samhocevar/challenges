@@ -15,7 +15,7 @@ with open('input.txt') as f:
             for n in range(1, len(rope)):
                 delta = tuple(map(sub, rope[n], rope[n-1]))
                 if max(map(abs, delta)) == 2:
-                    rope[n] = tuple(map(lambda x, d: x - d + int(d / 2), rope[n], delta))
+                    rope[n] = tuple(map(lambda x, d: x + int(d / 2), rope[n-1], delta))
             visited1.add(rope[1])
             visited2.add(rope[9])
 

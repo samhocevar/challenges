@@ -26,7 +26,7 @@ pub fn main() !void {
             for (rope[0..rope.len-1]) |v, i| {
                 var delta = rope[i + 1] - v;
                 if ((2 == try std.math.absInt(delta[0])) or (2 == try std.math.absInt(delta[1]))) {
-                    rope[i + 1] -= delta - @divTrunc(delta, vec2{2, 2});
+                    rope[i + 1] = v + @divTrunc(delta, vec2{2, 2});
                 }
             }
 
