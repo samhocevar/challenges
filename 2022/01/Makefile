@@ -1,6 +1,6 @@
 all:
 	# Shell
-	-@sh -c ./solution.sh
+	-@sh ./solution.sh
 	# Go
 	-@go run solution.go
 	# Python
