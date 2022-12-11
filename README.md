@@ -4,10 +4,10 @@ Fiddling with https://adventofcode.com/
 
 |   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
 |---|---|---|---|---|---|---|---|---|---|----|----|----|----|
-| Python | [⭐](/2022/01/solution.py) | | [⭐](/2022/03/solution.py) | [⭐](/2022/04/solution.py) | [⭐](/2022/05/solution.py) | [⭐](/2022/06/solution.py) | [⭐](/2022/07/solution.py) | [⭐](/2022/08/solution.py) | [⭐](/2022/09/solution.py) | [⭐](/2022/10/solution.py) | |
-| Rust | [⭐](/2022/01/solution.rs) | | [⭐](/2022/03/solution.rs) | [⭐](/2022/04/solution.rs) | | [⭐](/2022/06/solution.rs) | [⭐](/2022/07/solution.rs) | | | | | |
-| Bash | [⭐](/2022/01/solution.sh) | [⭐](/2022/02/solution.sh) | | [⭐](/2022/04/solution.sh) | | | | | | | | |
-| Go | [⭐](/2022/01/solution.go) | | | | | | | | | | | |
+| Python | [⭐](/2022/01/solution.py) | | [⭐](/2022/03/solution.py) | [⭐](/2022/04/solution.py) | [⭐](/2022/05/solution.py) | [⭐](/2022/06/solution.py) | [⭐](/2022/07/solution.py) | [⭐](/2022/08/solution.py) | [⭐](/2022/09/solution.py) | [⭐](/2022/10/solution.py) | [⭐](/2022/11/solution.py) | | |
+| Rust | [⭐](/2022/01/solution.rs) | | [⭐](/2022/03/solution.rs) | [⭐](/2022/04/solution.rs) | | [⭐](/2022/06/solution.rs) | [⭐](/2022/07/solution.rs) | | | | | | |
+| Bash | [⭐](/2022/01/solution.sh) | [⭐](/2022/02/solution.sh) | | [⭐](/2022/04/solution.sh) | | | | | | | | | |
+| Go | [⭐](/2022/01/solution.go) | | | | | | | | | | | | |
 | Zig | | | | | | | | | [⭐](/2022/09/solution.zig) | | | | |
 
 |   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
