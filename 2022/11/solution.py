@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from math import prod
+from math import lcm, prod
 from operator import add, mul
 
 monkeys = []
@@ -13,7 +13,7 @@ with open('input.txt') as f:
             case 'Test:', *args:      monkeys[-1].test = int(args[2])
             case _, 'true:', *args:   monkeys[-1].true = int(args[3])
             case _, 'false:', *args:  monkeys[-1].false = int(args[3])
-modulus = prod([m.test for m in monkeys])
+modulus = lcm(*(m.test for m in monkeys))
 
 def compute(steps, simple):
     state = [m.items.copy() for m in monkeys]
