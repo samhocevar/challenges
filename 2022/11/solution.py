@@ -7,12 +7,13 @@ monkeys = []
 with open('input.txt') as f:
     for l in f:
         match l.split():
-            case 'Monkey', _: monkeys.append(lambda: None)
-            case 'Starting', *args:   monkeys[-1].items = [int(x.strip(',')) for x in args[1:]]
-            case 'Operation:', *args: monkeys[-1].op = args[2:]
-            case 'Test:', *args:      monkeys[-1].test = int(args[2])
-            case _, 'true:', *args:   monkeys[-1].true = int(args[3])
-            case _, 'false:', *args:  monkeys[-1].false = int(args[3])
+            case 'Monkey', _: m = lambda: None; monkeys.append(m)
+            case 'Starting', *args:   m.items = [int(x.strip(',')) for x in args[1:]]
+            case 'Operation:', *args: m.op = args[2:]
+            case 'Test:', *args:      m.test = int(args[2])
+            case _, 'true:', *args:   m.true = int(args[3])
+            case _, 'false:', *args:  m.false = int(args[3])
+
 modulus = lcm(*(m.test for m in monkeys))
 
 def compute(steps, simple):
