@@ -5,8 +5,8 @@ signal, strength, crt = 1, 0, ''
 def parse(f):
     for l in f:
         match l.split():
-            case 'addx', x: yield 0; yield int(x)
-            case _: yield 0
+            case ['addx', x]: yield 0; yield int(x)
+            case ['noop']: yield 0
 
 with open('input.txt') as f:
     for cycle, x in enumerate(parse(f), start=1):
@@ -17,5 +17,5 @@ with open('input.txt') as f:
 
 print(strength)
 
-for s in range(0, 40 * 6, 40):
-    print(crt[s:s+40])
+for s in range(6):
+    print(crt[s*40:][:40])
