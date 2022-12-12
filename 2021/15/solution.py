@@ -8,8 +8,8 @@ with open('input.txt') as f:
     grid = np.array([[int(s) - 1 for s in l.strip()] for l in f])
 
 def bestcost(grid):
-    # Pad grid and make a list of border cells that we want to ignore
-    w, h = np.shape(grid)
+    # Make a list of border cells that we want to ignore
+    h, w = np.shape(grid)
     done  = set((-1, x) for x in range(w))
     done |= set((h, x) for x in range(w))
     done |= set((y, -1) for y in range(h))

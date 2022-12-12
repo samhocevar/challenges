@@ -9,7 +9,7 @@ grid = np.array(data)
 
 # Pad grid and make a list of border cells that we want to ignore
 padded = np.pad(grid, (1, 1), mode='constant', constant_values=0)
-w, h = np.shape(padded)
+h, w = np.shape(padded)
 ignore  = set((0, x) for x in range(w))
 ignore |= set((h - 1, x) for x in range(w))
 ignore |= set((y, 0) for y in range(h))
