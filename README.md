@@ -22,7 +22,7 @@ Fiddling with https://adventofcode.com/
 
 |   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
 |---|----|----|----|----|----|----|----|----|----|----|----|----|
-| Python | [⭐](/2021/14/solution.py) | [⭐](/2021/15/solution.py) | [⭐](/2021/16/solution.py) | [⭐](/2021/17/solution.py) | | | | | | | | |
+| Python | [⭐](/2021/14/solution.py) | [⭐](/2021/15/solution.py) | [⭐](/2021/16/solution.py) | [⭐](/2021/17/solution.py) | [⭐](/2021/18/solution.py) | | | | | | | |
 
 # Links
 
