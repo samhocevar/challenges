@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from heapq import *
+from operator import add
 import numpy as np
 
 # Read grid, subtract 1 from costs for convenience
@@ -8,13 +9,8 @@ with open('input.txt') as f:
     grid = np.array([[int(s) - 1 for s in l.strip()] for l in f])
 
 def bestcost(grid):
-    # Make a list of border cells that we want to ignore
     h, w = np.shape(grid)
-    done  = set((-1, x) for x in range(w))
-    done |= set((h, x) for x in range(w))
-    done |= set((y, -1) for y in range(h))
-    done |= set((y, w) for y in range(h))
-    costs = np.zeros(grid.shape).astype(int)
+    costs = np.full(grid.shape, -1)
 
     # Compute costs for each cell using Dijkstra. Store the frontier
     # in a heap so that we always pop the one with the best priority
@@ -23,15 +19,12 @@ def bestcost(grid):
 
     while todo:
         cost, a = heappop(todo)
-        if a in done:
-            continue
-        costs[a] = cost
-        done.add(a)
-        for d in [(0,1),(-1,0),(0,-1),(1,0)]:
-            b = (a[0] + d[0], a[1] + d[1])
-            if b in done:
-                continue
-            heappush(todo, (cost + grid[b] + 1, b))
+        if costs[a] == -1:
+            costs[a] = cost
+            for d in [(0,1), (-1,0), (0,-1), (1,0)]:
+                b = tuple(map(add, a, d))
+                if b[0] not in (-1, h) and b[1] not in (-1, w) and costs[b] == -1:
+                    heappush(todo, (cost + grid[b] + 1, b))
 
     return costs[(w - 1, h - 1)]
 
@@ -43,4 +36,3 @@ print(bestcost(grid))
 grid = np.hstack(list((grid + n) % 9 for n in range(5)))
 grid = np.vstack(list((grid + n) % 9 for n in range(5)))
 print(bestcost(grid))
-
