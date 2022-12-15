@@ -1,6 +1,10 @@
 Fiddling with Advent of Code
 
-# 2022: https://adventofcode.com/2022
+## 2022: https://adventofcode.com/2022
+
+|   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
+|---|----|----|----|----|----|----|----|----|----|----|----|----|
+| Python | [⭐](/2022/14/solution.py) | [⭐](/2022/15/solution.py) | | | | | | | | | | | |
 
 |   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
 |---|---|---|---|---|---|---|---|---|---|----|----|----|----|
@@ -10,22 +14,18 @@ Fiddling with Advent of Code
 | Go | [⭐](/2022/01/solution.go) | | | | | | | | | | | | |
 | Zig | | | | | | | | | [⭐](/2022/09/solution.zig) | | | | |
 
+## 2021: https://adventofcode.com/2021
+
 |   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
 |---|----|----|----|----|----|----|----|----|----|----|----|----|
-| Python | [⭐](/2022/14/solution.py) | [⭐](/2022/15/solution.py) | | | | | | | | | | | |
-
-# 2021: https://adventofcode.com/2021
+| Python | [⭐](/2021/14/solution.py) | [⭐](/2021/15/solution.py) | [⭐](/2021/16/solution.py) | [⭐](/2021/17/solution.py) | [⭐](/2021/18/solution.py) | | [⭐](/2021/20/solution.py) | [⭐](/2021/21/solution.py) | [⭐](/2021/22/solution.py) | | | |
 
 |   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
 |---|---|---|---|---|---|---|---|---|---|----|----|----|----|
 | Python | | | [⭐](/2021/03/solution.py) | [⭐](/2021/04/solution.py) | [⭐](/2021/05/solution.py) | [⭐](/2021/06/solution.py) | [⭐](/2021/07/solution.py) | [⭐](/2021/08/solution.py) | [⭐](/2021/09/solution.py) | [⭐](/2021/10/solution.py) | [⭐](/2021/11/solution.py) | [⭐](/2021/12/solution.py) | [⭐](/2021/13/solution.py) |
 | Bash | [⭐](/2021/01/solution.sh) | [⭐](/2021/02/solution.sh) | [⭐](/2021/03/solution.sh) | | | | | [⭐](/2021/08/solution.sh) | | | | | |
 
-|   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
-|---|----|----|----|----|----|----|----|----|----|----|----|----|
-| Python | [⭐](/2021/14/solution.py) | [⭐](/2021/15/solution.py) | [⭐](/2021/16/solution.py) | [⭐](/2021/17/solution.py) | [⭐](/2021/18/solution.py) | | [⭐](/2021/20/solution.py) | [⭐](/2021/21/solution.py) | [⭐](/2021/22/solution.py) | | | |
-
-# Links
+## Links
 
  * https://github.com/tdesveaux/AdventOfCode2022
  * https://github.com/diffty/AdventOfCode2022
