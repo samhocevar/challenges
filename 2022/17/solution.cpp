@@ -4,8 +4,8 @@
 #include <map>
 #include <vector>
 
-int const search1 = 2022
-int const search2 = 1000000000000
+uint64_t const search1 = 2022;
+uint64_t const search2 = 1000000000000;
 
 static const uint32_t shapes[] =
 {
