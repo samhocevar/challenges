@@ -3,7 +3,7 @@
 import numpy as np
 
 with open('input.txt') as f:
-    data = [[int(x) for x in l.strip()] for l in f]
+    data = [list(map(int, l.strip())) for l in f]
 
 grid = np.array(data)
 top = 1 + np.amax(grid)

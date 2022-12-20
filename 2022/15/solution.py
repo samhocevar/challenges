@@ -2,6 +2,7 @@
 
 from re import findall
 from collections import defaultdict
+from itertools import combinations
 
 with open('input.txt') as f:
     data = [tuple(map(int, findall("-?[0-9]+", l))) for l in f]
@@ -32,19 +33,17 @@ for sx, sy, bx, by in data:
 
 # Compute pairwise line intersections
 intersects = defaultdict(int)
-for i, l in enumerate(lines):
-    for b in lines[i + 1:]:
-        a = l
-        if (a[0] + a[1] + b[0] + b[1]) % 2:
-            continue # Wrong parity, lines can’t share any pixels
-        if (a[3] - a[1]) * (b[3] - b[1]) > 0:
-            continue # Lines are parallel
-        if a[3] < a[1]:
-            a, b = b, a # Ensure first segment grows in Y
-        kx = (b[0] + b[1] + a[0] - a[1]) // 2
-        ky = (b[0] + b[1] - a[0] + a[1]) // 2
-        if kx >= 0 and ky >= 0 and kx <= 2 * y0 and ky <= 2 * y0:
-            intersects[(kx, ky)] += 1
+for a, b in combinations(lines, 2):
+    if (a[0] + a[1] + b[0] + b[1]) % 2:
+        continue # Wrong parity, lines can’t share any pixels
+    if (a[3] - a[1]) * (b[3] - b[1]) > 0:
+        continue # Lines are parallel
+    if a[3] < a[1]:
+        a, b = b, a # Ensure first segment grows in Y
+    kx = (b[0] + b[1] + a[0] - a[1]) // 2
+    ky = (b[0] + b[1] - a[0] + a[1]) // 2
+    if kx >= 0 and ky >= 0 and kx <= 2 * y0 and ky <= 2 * y0:
+        intersects[(kx, ky)] += 1
 
 # Check any point that is part of at least 4 intersections
 for (x, y), c in intersects.items():
