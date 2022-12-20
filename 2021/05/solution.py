@@ -18,17 +18,14 @@ for v in data:
     yd = 1 if v[3] > v[1] else -1
     ys = list(range(v[1], v[3] + yd, yd))
 
-    if len(xs) == 1:
-        xs *= len(ys)
-    if len(ys) == 1:
-        ys *= len(xs)
+    match len(xs), len(ys):
+        case 1, n: xs *= n
+        case n, 1: ys *= n
 
     if v[0] == v[2] or v[1] == v[3]:
-        for x, y in zip(xs, ys):
-            g1[(x, y)] += 1
+        g1[(xs, ys)] += 1
 
-    for x, y in zip(xs, ys):
-        g2[(x, y)] += 1
+    g2[(xs, ys)] += 1
 
 print(len(np.nonzero(g1 > 1)[0]))
 print(len(np.nonzero(g2 > 1)[0]))
