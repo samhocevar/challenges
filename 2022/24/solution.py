@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 from heapq import *
-from operator import add
 import numpy as np
 
 with open('input.txt') as f:
@@ -12,26 +11,21 @@ h, w = np.shape(grid)
 def is_free(t, x, y):
     if grid[(y, x)] == -1:
         return False
-    if grid[(y, (x + t - 2) % (w - 4) + 2)] == 1:
-        return False
-    if grid[(y, (x - t - 2) % (w - 4) + 2)] == 2:
-        return False
-    if grid[((y + t - 2) % (h - 4) + 2, x)] == 3:
-        return False
-    if grid[((y - t - 2) % (h - 4) + 2, x)] == 4:
-        return False
-    return True
+    l = [(y, (x + t - 2) % (w - 4) + 2),
+         (y, (x - t - 2) % (w - 4) + 2),
+         ((y + t - 2) % (h - 4) + 2, x),
+         ((y - t - 2) % (h - 4) + 2, x)]
+    return all(grid[p] != n for n, p in enumerate(l, 1))
 
 def compute(start, end):
     done = set()
     todo = []
     heappush(todo, start)
     while todo:
-        p = heappop(todo)
-        if p in done:
+        (t, x, y) = heappop(todo)
+        if (t, x, y) in done:
             continue
-        done.add(p)
-        t, x, y = p
+        done.add((t, x, y))
         if (x, y) == end:
             return t
         for x2, y2 in ((x - 1, y), (x + 1, y), (x, y), (x, y - 1), (x, y + 1)):
