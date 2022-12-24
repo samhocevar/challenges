@@ -22,15 +22,16 @@ def compute(start, end):
     todo = []
     heappush(todo, start)
     while todo:
-        (t, x, y) = heappop(todo)
+        t, x, y = heappop(todo)
         if (t, x, y) in done:
             continue
         done.add((t, x, y))
+        if not is_free(t, x, y):
+            continue
         if (x, y) == end:
             return t
         for x2, y2 in ((x - 1, y), (x + 1, y), (x, y), (x, y - 1), (x, y + 1)):
-            if is_free(t + 1, x2, y2):
-                heappush(todo, (t + 1, x2, y2))
+            heappush(todo, (t + 1, x2, y2))
 
 n = compute((0, 2, 1), (w - 3, h - 2))
 print(n)
