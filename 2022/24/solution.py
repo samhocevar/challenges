@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+
+from heapq import *
+from operator import add
+import numpy as np
+
+with open('input.txt') as f:
+    grid = np.array([["#.<>^v".index(s) - 1 for s in l.strip()] for l in f])
+grid = np.pad(grid, 1, constant_values=-1)
+h, w = np.shape(grid)
+
+def is_free(t, x, y):
+    if grid[(y, x)] == -1:
+        return False
+    if grid[(y, (x + t - 2) % (w - 4) + 2)] == 1:
+        return False
+    if grid[(y, (x - t - 2) % (w - 4) + 2)] == 2:
+        return False
+    if grid[((y + t - 2) % (h - 4) + 2, x)] == 3:
+        return False
+    if grid[((y - t - 2) % (h - 4) + 2, x)] == 4:
+        return False
+    return True
+
+def compute(start, end):
+    done = set()
+    todo = []
+    heappush(todo, start)
+    while todo:
+        p = heappop(todo)
+        if p in done:
+            continue
+        done.add(p)
+        t, x, y = p
+        if (x, y) == end:
+            return t
+        for x2, y2 in ((x - 1, y), (x + 1, y), (x, y), (x, y - 1), (x, y + 1)):
+            if is_free(t + 1, x2, y2):
+                heappush(todo, (t + 1, x2, y2))
+
+n = compute((0, 2, 1), (w - 3, h - 2))
+print(n)
+
+n = compute((n, w - 3, h - 2), (2, 1))
+n = compute((n, 2, 1), (w - 3, h - 2))
+print(n)

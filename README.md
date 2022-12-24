@@ -6,7 +6,7 @@ Click on the 🌟 to see the code for that language.
 
 |   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
 |---|----|----|----|----|----|----|----|----|----|----|----|----|
-| Python | [🌟](/2022/14/solution.py) | [🌟](/2022/15/solution.py) | [🌟](/2022/16/solution.py) | | [🌟](/2022/18/solution.py) | | [🌟](/2022/20/solution.py) | [🌟](/2022/21/solution.py) | [🌟](/2022/22/solution.py) | [🌟](/2022/23/solution.py) | | | |
+| Python | [🌟](/2022/14/solution.py) | [🌟](/2022/15/solution.py) | [🌟](/2022/16/solution.py) | | [🌟](/2022/18/solution.py) | | [🌟](/2022/20/solution.py) | [🌟](/2022/21/solution.py) | [🌟](/2022/22/solution.py) | [🌟](/2022/23/solution.py) | [🌟](/2022/24/solution.py) | | |
 | C++ | | | | [🌟](/2022/17/solution.cpp) | | [🌟](/2022/19/solution.cpp) | | | | | | | |
 
 |   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
