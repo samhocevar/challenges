@@ -5,169 +5,181 @@
 #include <string>
 #include <vector>
 
-// There are 8 room cells and 7 hallway cells:
+// There are 4 lines of rooms, 16 room cells, and 7 hallway cells:
 //
 // ·············
 // ·65 4 3 2 10·  hall
-// ···7·6·5·4···  room
+// ···f·e·d·c···  room
+//   ·b·a·9·8·    room
+//   ·7·6·5·4·    room
 //   ·3·2·1·0·    room
 //   ·········
 
-// Distances from room to hall
-static uint8_t const distances[8][7] =
+// Distances from room lines to hallway
+static uint8_t const distances[4][7] =
 {
-    {  4,  3,  3,  5,  7,  9, 10 },
-    {  6,  5,  3,  3,  5,  7,  8 },
-    {  8,  7,  5,  3,  3,  5,  6 },
-    { 10,  9,  7,  5,  3,  3,  4 },
-
     {  3,  2,  2,  4,  6,  8,  9 },
     {  5,  4,  2,  2,  4,  6,  7 },
     {  7,  6,  4,  2,  2,  4,  5 },
     {  9,  8,  6,  4,  2,  2,  3 },
 };
 
-// Blockers from room to hall
-static uint64_t blockers[8][7];
-
-static inline uint64_t room_pos(int n) { return (uint64_t)0x1 << (4 * n); }
-static inline uint64_t hall_pos(int n) { return (uint64_t)0x1 << (4 * (n + 8)); }
-
-static uint8_t const A = 1;
-static uint8_t const B = 2;
-static uint8_t const C = 3;
-static uint8_t const D = 4;
-
-static inline uint8_t final_room(uint8_t val) { return 4 - val; }
-static inline uint8_t peek_room(uint64_t state, int n) { return (state >> (4 * n)) & 0xf; }
-static inline uint8_t peek_hall(uint64_t state, int n) { return (state >> (4 * (n + 8))) & 0xf; }
-
-#if 0
-static void print_state(uint64_t state)
-{
-    printf("#############\n#");
-    for (int i = 7; i--;)
-        printf(i <= 1 || i == 6 ? "%c" : "%c ", " ABCD"[peek_hall(state, i)]);
-    printf("#\n###");
-    for (int i = 8; i-- > 4;)
-        printf("%c#", " ABCD"[peek_room(state, i)]);
-    printf("##\n  #");
-    for (int i = 4; i--;)
-        printf("%c#", " ABCD"[peek_room(state, i)]);
-    printf("\n  #########\n");
-}
-#endif
-
-static uint64_t parse_state(std::string const &s)
-{
-    uint64_t ret = 0;
-    for (auto c : s)
-        if (c >= 'A' && c <= 'D')
-             ret = (ret << 4) | (c - 'A' + 1);
-    return ret;
-}
-
 struct move
 {
     int src, dst;
 };
 
-static std::vector<move> get_moves(uint64_t state)
+struct state
 {
-    std::vector<move> ret;
-    // All exit moves
-    for (int room = 0; room < 8; ++room)
+    uint64_t m_rooms;
+    uint32_t m_hallway;
+
+    // Parse a string, either for part 1 or part 2. Only the ABCD characters are meaningful.
+    void init(std::string const &s, int part)
     {
-        auto n = peek_room(state, room);
-        if (n == 0)
-            continue; // Empty room
-        if (room < 4 && room == final_room(n))
-            continue; // Already in place in bottom row
-        if (room >= 4 && room - 4 == final_room(n) && n == peek_room(state, room - 4))
-            continue; // Already in place in top row
+        m_hallway = 0; m_rooms = 0;
+        for (auto c : s)
+        {
+            if (c >= 'A' && c <= 'D')
+                m_rooms = (m_rooms << 4) | (c - 'A' + 1);
+            if (part == 2 && (m_rooms & 0xf000) && !(m_rooms & 0xf0000))
+                m_rooms = (m_rooms << 32) | 0x43214213;
+        }
+        if (part == 1)
+            m_rooms = (m_rooms << 32) | 0x12341234;
+    }
+
+    int32_t solve() const
+    {
+        std::map<state, int32_t> costs;
+        return get_cost(costs);
+    }
+
+private:
+    void print() const
+    {
+        printf("#############\n#");
+        for (int i = 7; i--;)
+            printf(i <= 1 || i == 6 ? "%c" : "%c ", " ABCD"[peek_hall(i)]);
+        printf("#\n###");
+        for (int l = 4; l--;)
+        {
+            for (int i = 4; i--;)
+                printf("%c#", " ABCD"[peek_room(l * 4 + i)]);
+            printf(l == 3 ? "##\n  #" : l ? "\n  #" : "\n  #########\n");
+        }
+    }
+
+    inline uint8_t peek_hall(int n) const { return (m_hallway >> (4 * n)) & 0xf; }
+    inline uint8_t peek_room(int n) const { return (m_rooms >> (4 * n)) & 0xf; }
+
+    // Return if the path is free between a room line and a hallway position
+    inline bool is_path_free(int line, int hall) const
+    {
+        for (int n = hall + 1; n < line + 2; ++n)
+            if (peek_hall(n))
+                return false;
+        for (int n = line + 2; n < hall; ++n)
+            if (peek_hall(n))
+                return false;
+        return true;
+    }
+
+    // List possible moves for a given position
+    std::vector<move> list_moves() const
+    {
+        std::vector<move> ret;
+
+        // Count how many items are already arranged in the room lines
+        uint8_t arranged[4] { 0 };
+        for (int line = 0; line < 4; ++line)
+            while (arranged[line] < 4 && 4 - peek_room(line + arranged[line] * 4) == line)
+                ++arranged[line];
+
+        // All exit moves
+        for (int line = 0; line < 4; ++line)
+        {
+            if (arranged[line] == 4 || !peek_room(line + arranged[line] * 4))
+                continue; // Everything is neatly arranged
+            for (int room = line + 12; room >= 0; room -= 4)
+            {
+                if (!peek_room(room))
+                    continue; // Skip to first non-empty room
+                for (int hall = 0; hall < 7; ++hall)
+                    if (!peek_hall(hall) && is_path_free(line, hall))
+                        ret.push_back(move { room, hall + 16 });
+                break;
+            }
+        }
+
+        // All reentry moves
         for (int hall = 0; hall < 7; ++hall)
         {
-            if (peek_hall(state, hall))
-                continue; // Destination is occupied
-            if (state & blockers[room][hall])
-                continue; // Someone’s in the way
-            ret.push_back(move{ room, 8 + hall });
+            auto n = peek_hall(hall);
+            if (n == 0)
+                continue; // Empty hallway
+            auto line = 4 - n;
+            auto room = line + arranged[line] * 4;
+            if (!peek_room(room) && is_path_free(line, hall))
+                ret.push_back(move{ 16 + hall, room });
         }
+
+        return ret;
     }
-    // All reentry moves
-    for (int hall = 0; hall < 7; ++hall)
+
+    // Get the cost of solving a given position. Cache history in a map for performance.
+    int32_t get_cost(std::map<state, int32_t> &costs) const
     {
-        auto n = peek_hall(state, hall);
-        if (n == 0)
-            continue; // Empty hallway
-        auto room = final_room(n);
-        if (peek_room(state, 4 + room) == 0)
+        if (m_rooms == state::end)
+            return 0;
+
+        auto cached = costs.find(*this);
+        if (cached != costs.end())
+            return std::get<1>(*cached);
+
+        int32_t best_cost = 1000000;
+        for (auto &move : list_moves())
         {
-            auto m = peek_room(state, room);
-            if (m == 0 && !(state & blockers[room][hall]))
-                ret.push_back(move{ 8 + hall, room });
-            else if (m == n && !(state & blockers[room + 4][hall]))
-                ret.push_back(move{ 8 + hall, 4 + room });
+            auto s2 = *this;
+            int32_t move_cost = s2.apply_move(move);
+            best_cost = std::min(best_cost, move_cost + s2.get_cost(costs));
         }
+        costs[*this] = best_cost;
+        return best_cost;
     }
-    return ret;
-}
 
-static uint64_t end_state = parse_state("ABCDABCD");
-
-static std::map<uint64_t, int32_t> costs;
-
-static int32_t get_cost(uint64_t state)
-{
-    if (state == end_state)
-        return 0;
-    auto cached = costs.find(state);
-    if (cached != costs.end())
-        return std::get<1>(*cached);
-    int32_t best_cost = 100000;
-    for (auto &move : get_moves(state))
+    // Apply a move in-place and return how much it cost
+    int32_t apply_move(move m)
     {
         static int32_t const mul[4] = { 1, 10, 100, 1000 };
-        auto n = (state >> (4 * move.src)) & 0xf;
-        auto d = move.src > move.dst ? distances[move.dst][move.src - 8]
-                                     : distances[move.src][move.dst - 8];
-        auto s = state - (n << (4 * move.src)) + (n << (4 * move.dst));
-        int32_t move_cost = d * mul[n - 1];
-        best_cost = std::min(best_cost, move_cost + get_cost(s));
+        int hallway = m.src >= 16 ? m.src - 16 : m.dst - 16;
+        int room = m.src >= 16 ? m.dst : m.src;
+
+        auto n = m.src >= 16 ? (m_hallway >> (4 * hallway)) & 0xf : (m_rooms >> (4 * room)) & 0xf;
+        auto d = distances[room & 3][hallway] + (3 - room / 4);
+
+        m_hallway ^= n << (4 * hallway);
+        m_rooms ^= n << (4 * room);
+        return d * mul[n - 1];
     }
-    costs[state] = best_cost;
-    return best_cost;
+
+    static uint64_t const end = 0x1234123412341234;
+};
+
+static bool operator <(state const &a, state const &b)
+{
+    return a.m_rooms == b.m_rooms ? a.m_hallway < b.m_hallway : a.m_rooms < b.m_rooms;
 }
 
 int main(void)
 {
-    // Rooms 4, 5, 6, 7 block rooms 0, 1, 2, 3
-    for (int room = 0; room < 4; ++room)
-        for (int hall = 0; hall < 7; ++hall)
-            blockers[room][hall] |= 0xf * room_pos(room + 4);
-    // Hallways block other hallways
-    for (int room = 0; room < 4; ++room)
-    {
-        for (int hall = 0; hall < 7; ++hall)
-        {
-            for (int n = hall + 1; n < room + 2; ++n)
-            {
-                blockers[room][hall] |= 0xf * hall_pos(n);
-                blockers[room + 4][hall] |= 0xf * hall_pos(n);
-            }
- 
-            for (int n = room + 2; n < hall; ++n)
-            {
-                blockers[room][hall] |= 0xf * hall_pos(n);
-                blockers[room + 4][hall] |= 0xf * hall_pos(n);
-            }
-        }
-    }
-
     std::ifstream t("input.txt");
     std::string input((std::istreambuf_iterator<char>(t)), std::istreambuf_iterator<char>());
-    uint64_t state = parse_state(input);
 
-    printf("%d\n", get_cost(state));
+    state s;
+    s.init(input, 1);
+    printf("%d\n", s.solve());
+
+    s.init(input, 2);
+    printf("%d\n", s.solve());
 }
-
