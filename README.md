@@ -47,7 +47,7 @@ Click on the ⭐ to see the code for that language.
 
 |   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
 |---|---|---|---|---|---|---|---|---|---|----|----|----|----|
-| Python | | [⭐](/2019/02/solution.py) | [⭐](/2019/03/solution.py) | | | | | | | | | | |
+| Python | | [⭐](/2019/02/solution.py) | [⭐](/2019/03/solution.py) | [⭐](/2019/04/solution.py) | [⭐](/2019/05/solution.py) | [⭐](/2019/06/solution.py) | | [⭐](/2019/010/solution.py) | | | | | |
 | Bash | [⭐](/2019/01/solution.sh) | | | | | | | | | | | | |
 
 ## Links
