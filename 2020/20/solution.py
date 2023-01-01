@@ -8,7 +8,13 @@ import numpy as np
 TSIZE = 10
 TOP, RIGHT, BOTTOM, LEFT = 0, 1, 2, 3
 
-def dual(n): return 4 + (4 - n) % 4
+# Return ith transform of matrix; 0-3 are rotations, 4-7 is horizontal flip then rotations
+def transform(t, i):
+    if i & 4: t = np.fliplr(t)
+    if i & 2: t = np.flip(t)
+    return np.rot90(t) if i & 1 else t
+
+def dual(i): return 4 + (4 - i) % 4
 
 MONSTER = np.array([' #'.index(c) for c in \
     "                  # "
@@ -29,31 +35,24 @@ if SIZE * SIZE != len(data):
 tiles, edges = {}, {}
 stats = [0] * (1 << TSIZE)
 for n, t in data:
-    tiles[n] = t[1:-1,1:-1]
-    e = []
-    for i in range(8):
-        v = sum([b << k for k, b in enumerate(t[TOP])])
-        e.append(v)
-        stats[v] += 1
-        t = np.rot90(t)
-        if i == 3: t = np.fliplr(t)
+    tiles[n] = t[1:-1,1:-1] # Crop borders early
+    e = [sum([b << k for k, b in enumerate(transform(t, i)[0])]) for i in range(8)]
     edges[n] = e
+    for v in e:
+        stats[v] += 1
+
+# Find a top-left corner; rotate the tile properly before returning it
+def find_corner():
+    for n, t in tiles.items():
+        e = edges[n]
+        for i in range(4):
+            if stats[e[(TOP + i) % 4]] == 1 and stats[e[(LEFT + i) % 4]] == 1:
+                tiles[n] = transform(t, i)
+                edges[n] = e[i:4] + e[:i] + e[8-i:] + e[4:8-i]
+                return n
 
 # Keep track of already placed tiles
 placed = set()
-
-# Find a top-left corner; make sure the tile is properly oriented
-def find_corner():
-    for n, t in tiles.items():
-        if n in placed:
-            continue
-        e = edges[n]
-        for _ in range(4):
-            if stats[e[TOP]] == 1 and stats[e[LEFT]] == 1:
-                tiles[n], edges[n] = t, e
-                return n
-            e = e[1:4] + e[:1] + e[7:] + e[4:7]
-            t = np.rot90(t)
 
 # Find a tile with the given edge (orientation, value)
 def find_edge(o, v):
@@ -61,15 +60,16 @@ def find_edge(o, v):
         if n in placed:
             continue
         e = edges[n]
-        for i in range(8):
-            if e[o] == v:
-                tiles[n], edges[n] = t, e
-                return n
-            e = e[1:4] + e[:1] + e[7:] + e[4:7]
-            t = np.rot90(t)
-            if i == 3:
-                t = np.fliplr(t)
+        if v in e:
+            tmp = e.index(v)
+            i = (tmp - o) % 4 + (tmp & 4)
+            t = transform(t, i)
+            if i >= 4:
+                i -= 4
                 e = e[4:] + e[:4]
+            e = e[i:4] + e[:i] + e[8-i:] + e[4:8-i]
+            tiles[n], edges[n] = t, e
+            return n
     raise Exception('Something went wrong, need to backtrack?')
 
 # Part 1: build the puzzle piece by piece. It looks like every edge
@@ -91,7 +91,7 @@ print(prod(array[[0, 0, -1, -1], [0, -1, 0, -1]].tolist()))
 # of the 8 possible orientations. Stop at the first match.
 big = reduce(lambda a, b: np.append(a, b, axis=0),
              (reduce(lambda a, b: np.append(a, b, axis=1),
-                     map(tiles.get, array[n])) for n in range(SIZE)))
+                     map(tiles.get, row)) for row in array))
 required = np.count_nonzero(MONSTER)
 for i in range(8):
     matches = 0

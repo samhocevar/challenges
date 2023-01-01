@@ -33,7 +33,7 @@ Link to code contains sloc as computed by [SCC](https://github.com/boyter/scc).
 
 |   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
 |---|----|----|----|----|----|----|----|----|----|----|----|----|
-| Python | [21](/2020/14/solution.py) | [10](/2020/15/solution.py) | [47](/2020/16/solution.py) | [19](/2020/17/solution.py) | [56](/2020/18/solution.py) | [28](/2020/19/solution.py) | [85](/2020/20/solution.py) | [21](/2020/21/solution.py) | [31](/2020/22/solution.py) | [29](/2020/23/solution.py) | [32](/2020/24/solution.py) | [11](/2020/25/solution.py) |
+| Python | [21](/2020/14/solution.py) | [10](/2020/15/solution.py) | [47](/2020/16/solution.py) | [19](/2020/17/solution.py) | [56](/2020/18/solution.py) | [28](/2020/19/solution.py) | [83](/2020/20/solution.py) | [21](/2020/21/solution.py) | [31](/2020/22/solution.py) | [29](/2020/23/solution.py) | [32](/2020/24/solution.py) | [11](/2020/25/solution.py)🌟 |
 
 |   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
 |---|---|---|---|---|---|---|---|---|---|----|----|----|----|
