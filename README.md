@@ -21,7 +21,7 @@ Link to code contains sloc as computed by [SCC](https://github.com/boyter/scc).
 
 |   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
 |---|----|----|----|----|----|----|----|----|----|----|----|----|
-| Python | [26](/2021/14/solution.py) | [23](/2021/15/solution.py) | [47](/2021/16/solution.py) | [27](/2021/17/solution.py) | [46](/2021/18/solution.py) | [58](/2021/19/solution.py) | [15](/2021/20/solution.py) | [35](/2021/21/solution.py) | [34](/2021/22/solution.py) | | | [27](/2021/25/solution.py) |
+| Python | [26](/2021/14/solution.py) | [23](/2021/15/solution.py) | [47](/2021/16/solution.py) | [27](/2021/17/solution.py) | [46](/2021/18/solution.py) | [58](/2021/19/solution.py) | [15](/2021/20/solution.py) | [35](/2021/21/solution.py) | [34](/2021/22/solution.py) | | [29](/2021/24/solution.py) | [27](/2021/25/solution.py)🌟 |
 | C++ | | | | | | | | | | [142](/2021/23/solution.cpp) | | |
 
 |   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
