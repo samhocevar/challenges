@@ -27,7 +27,9 @@ Link to code contains sloc as computed by [SCC](https://github.com/boyter/scc).
 |   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
 |---|---|---|---|---|---|---|---|---|---|----|----|----|----|
 | Python | | | [34](/2021/03/solution.py) | [44](/2021/04/solution.py) | [22](/2021/05/solution.py) | [9](/2021/06/solution.py) | [10](/2021/07/solution.py) | [28](/2021/08/solution.py) | [27](/2021/09/solution.py) | [22](/2021/10/solution.py) | [37](/2021/11/solution.py) | [22](/2021/12/solution.py) | [26](/2021/13/solution.py) |
-| Bash | [1](/2021/01/solution.sh) | [1](/2021/02/solution.sh) | [2](/2021/03/solution.sh) | | | | | [2](/2021/08/solution.sh) | | | | | |
+| Bash | [1](/2021/01/solution.sh) | [1](/2021/02/solution.sh) | [2](/2021/03/solution.sh)\* | | | | | [2](/2021/08/solution.sh)\* | | | | | |
+
+\*: only part 1 implemented
 
 ## 2020: https://adventofcode.com/2020
 
