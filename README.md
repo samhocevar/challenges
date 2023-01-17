@@ -2,9 +2,7 @@ Fiddling with code challenges such as Advent of Code.
 
 Link to code contains sloc as computed by [SCC](https://github.com/boyter/scc).
 
-## Challenge Hub: https://challenges.aquaq.co.uk/
-
-## Advent of Code 2022: https://adventofcode.com/2022
+## Advent of Code 2022 — https://adventofcode.com/2022
 
 |   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
 |---|----|----|----|----|----|----|----|----|----|----|----|----|
@@ -19,7 +17,7 @@ Link to code contains sloc as computed by [SCC](https://github.com/boyter/scc).
 | Go | [27](/aoc2022/01/solution.go) | | | | | | | | | | | | |
 | Zig | | | | | | | | | [32](/aoc2022/09/solution.zig) | | | | |
 
-## Advent of Code 2021: https://adventofcode.com/2021
+## Advent of Code 2021 — https://adventofcode.com/2021
 
 |   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
 |---|----|----|----|----|----|----|----|----|----|----|----|----|
@@ -33,7 +31,7 @@ Link to code contains sloc as computed by [SCC](https://github.com/boyter/scc).
 
 \*: only part 1 implemented
 
-## Advent of Code 2020: https://adventofcode.com/2020
+## Advent of Code 2020 — https://adventofcode.com/2020
 
 |   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
 |---|----|----|----|----|----|----|----|----|----|----|----|----|
@@ -43,7 +41,7 @@ Link to code contains sloc as computed by [SCC](https://github.com/boyter/scc).
 |---|---|---|---|---|---|---|---|---|---|----|----|----|----|
 | Python | [5](/aoc2020/01/solution.py) | [9](/aoc2020/02/solution.py) | [10](/aoc2020/03/solution.py) | [31](/aoc2020/04/solution.py) | [7](/aoc2020/05/solution.py) | [6](/aoc2020/06/solution.py) | [23](/aoc2020/07/solution.py) | [14](/aoc2020/08/solution.py) | [18](/aoc2020/09/solution.py) | [13](/aoc2020/10/solution.py) | [43](/aoc2020/11/solution.py) | [15](/aoc2020/12/solution.py) | [11](/aoc2020/13/solution.py) |
 
-## Advent of Code 2019: https://adventofcode.com/2019
+## Advent of Code 2019 — https://adventofcode.com/2019
 
 |   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
 |---|----|----|----|----|----|----|----|----|----|----|----|----|
@@ -53,6 +51,13 @@ Link to code contains sloc as computed by [SCC](https://github.com/boyter/scc).
 |---|---|---|---|---|---|---|---|---|---|----|----|----|----|
 | Python | | [17](/aoc2019/02/solution.py) | [39](/aoc2019/03/solution.py) | [8](/aoc2019/04/solution.py) | [25](/aoc2019/05/solution.py) | [13](/aoc2019/06/solution.py) | | [11](/aoc2019/08/solution.py) | | | | | |
 | Bash | [1](/aoc2019/01/solution.sh) | | | | | | | | | | | | |
+
+## Aquaq Challenge Hub — https://challenges.aquaq.co.uk/
+
+|   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|---|---|---|----|----|----|
+| Python | [3](/aquaq/00/solution.py) | [5](/aquaq/01/solution.py) | [7](/aquaq/02/solution.py) | [13](/aquaq/03/solution.py) | [4](/aquaq/04/solution.py) | [16](/aquaq/05/solution.py) | [13](/aquaq/06/solution.py) | [12](/aquaq/07/solution.py) | [13](/aquaq/08/solution.py) | [3](/aquaq/09/solution.py) | [20](/aquaq/10/solution.py) | | |
+
 
 ## Links
 
