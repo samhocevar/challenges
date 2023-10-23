@@ -49,7 +49,7 @@ Link to code contains sloc as computed by [SCC](https://github.com/boyter/scc).
 
 |   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
 |---|---|---|---|---|---|---|---|---|---|----|----|----|----|
-| Python | | [17](/aoc2019/02/solution.py) | [39](/aoc2019/03/solution.py) | [8](/aoc2019/04/solution.py) | [25](/aoc2019/05/solution.py) | [13](/aoc2019/06/solution.py) | | [11](/aoc2019/08/solution.py) | | | | | |
+| Python | | [17](/aoc2019/02/solution.py) | [39](/aoc2019/03/solution.py) | [8](/aoc2019/04/solution.py) | [25](/aoc2019/05/solution.py) | [13](/aoc2019/06/solution.py) | [45](/aoc2019/07/solution.py) | [11](/aoc2019/08/solution.py) | | | | | |
 | Bash | [1](/aoc2019/01/solution.sh) | | | | | | | | | | | | |
 
 ## Aquaq Challenge Hub — https://challenges.aquaq.co.uk/
