@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+LUT = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', *map(str, range(1, 10))]
+
 sum1, sum2 = 0, 0
 
 with open('input.txt') as f:
@@ -11,8 +13,7 @@ with open('input.txt') as f:
 
         # If a number (word or single digit) is found at pos, return its integer value, otherwise None
         def get_digit(pos):
-            lut = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', *map(str, range(1, 10))]
-            return next((n % 9 + 1 for n, k in enumerate(lut) if line[pos:].startswith(k)), None)
+            return next((n % 9 + 1 for n, k in enumerate(LUT) if line[pos:].startswith(k)), None)
 
         # Part 2: same but use a helper function that also understands words
         if digits := list(filter(None, map(get_digit, range(len(line))))):

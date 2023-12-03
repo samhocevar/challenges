@@ -5,19 +5,19 @@ from math import prod
 from operator import itemgetter
 from re import split as resplit
 
-rules = { 'red': 12, 'green': 13, 'blue': 14 }
+RULES = { 'red': 12, 'green': 13, 'blue': 14 }
 
 sum1, sum2 = 0, 0
 
 with open('input.txt') as f:
     # Split each line along any of the ":;," characters followed by a space
-    for game in map(lambda l: resplit('[:;,] ', l.strip()), f.readlines()):
+    for game in map(lambda l: resplit('[:;,] ', l.strip()), f):
 
         # Make a list of all (colour, count) tuples from this game
         data = [(s2, int(s1)) for s1, s2 in map(str.split, game[1:])]
 
         # Part 1: check that all colour counts are within the rules
-        if all(n <= rules[c] for c, n in data):
+        if all(n <= RULES[c] for c, n in data):
             sum1 += int(game[0][5:])
 
         # Part 2: compute the max draw count of each colour and multiply them together
