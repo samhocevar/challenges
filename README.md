@@ -9,7 +9,7 @@ Link to code contains sloc as computed by [SCC](https://github.com/boyter/scc).
 
 |   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
 |---|---|---|---|---|---|---|---|---|---|----|----|----|----|
-| Python | [12](/aoc2023/01/solution.py) | [14](/aoc2023/02/solution.py) | | | | | | | | | | | |
+| Python | [12](/aoc2023/01/solution.py) | [14](/aoc2023/02/solution.py) | [10](/aoc2023/03/solution.py) | | | | | | | | | | |
 
 ## Advent of Code 2022 — https://adventofcode.com/2022
 
