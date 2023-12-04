@@ -2,14 +2,7 @@ Fiddling with code challenges such as Advent of Code.
 
 Link to code contains sloc as computed by [SCC](https://github.com/boyter/scc).
 
-## Advent of Code 2023 — https://adventofcode.com/2023
-
-|   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
-|---|----|----|----|----|----|----|----|----|----|----|----|----|
-
-|   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
-|---|---|---|---|---|---|---|---|---|---|----|----|----|----|
-| Python | [12](/aoc2023/01/solution.py) | [14](/aoc2023/02/solution.py) | [9](/aoc2023/03/solution.py) | [9](/aoc2023/04/solution.py) | | | | | | | | | |
+[Advent of Code 2023](/aoc2023/)
 
 ## Advent of Code 2022 — https://adventofcode.com/2022
 
