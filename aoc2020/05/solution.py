@@ -9,4 +9,4 @@ def rank(s):
 ids = [rank(s[6::-1]) * 8 + rank(s[:6:-1]) for s in data]
 
 print(max(ids))
-print(max(set(ids) - set([i + 1 for i in ids])) - 1)
+print(max({*ids} - {i + 1 for i in ids}) - 1)

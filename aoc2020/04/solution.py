@@ -2,13 +2,13 @@
 
 from re import fullmatch
 
-required = set(['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'])
+required = {'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'}
 
 s0, s1 = 0, 0
 with open('input.txt') as f:
     for passport in f.read().split('\n\n'):
         fields = passport.replace('\n', ' ').split()
-        if len(set(f[:3] for f in fields) & required) != len(required):
+        if not required.issubset({f[:3] for f in fields}):
             continue
         s0 += 1
         for f in fields:

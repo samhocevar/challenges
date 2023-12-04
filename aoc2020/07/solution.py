@@ -13,7 +13,7 @@ with open('input.txt') as f:
                 parents[subbag].add(spec[0][1])
 
 def count_containers(bag):
-    todo, containers = set([bag]), set()
+    todo, containers = {bag}, set()
     while todo:
         bag = todo.pop()
         new = parents[bag] - containers

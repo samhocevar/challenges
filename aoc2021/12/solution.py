@@ -3,7 +3,7 @@
 with open('input.txt') as f:
     data = [l.strip().split('-') for l in f]
 
-rooms = set(kv[0] for kv in data) | set(kv[1] for kv in data)
+rooms = {kv[0] for kv in data} | {kv[1] for kv in data}
 
 links = { r: set() for r in rooms }
 for a, b in data:

@@ -10,7 +10,7 @@ lut = defaultdict(list)
 with open('input.txt') as f:
     for l in map(str.strip, f):
         a, b = re.match('(.*) \(contains (.*)\)', l).groups()
-        lines.append(set(a.split()))
+        lines.append({*a.split()})
         for allergen in b.split(', '):
             lut[allergen].append(lines[-1])
 

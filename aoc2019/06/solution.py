@@ -14,6 +14,6 @@ def path(s):
 
 print(sum(len(path(k)) for k in orbits.keys()))
 
-a = set(path('YOU'))
-b = set(path('SAN'))
+a = {*path('YOU')}
+b = {*path('SAN')}
 print(len(a) + len(b) - 2 * len(a & b))

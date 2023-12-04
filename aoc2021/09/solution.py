@@ -24,7 +24,7 @@ print(sum(1 + grid[a] for a in lows))
 # Find basins
 basins = []
 for a in lows:
-    todo = set([(a[0] + 1, a[1] + 1)])
+    todo = {(a[0] + 1, a[1] + 1)}
     done = set()
     while todo:
         y, x = todo.pop()

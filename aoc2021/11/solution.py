@@ -10,15 +10,15 @@ grid = np.array(data)
 # Pad grid and make a list of border cells that we want to ignore
 padded = np.pad(grid, (1, 1), mode='constant', constant_values=0)
 h, w = np.shape(padded)
-ignore  = set((0, x) for x in range(w))
-ignore |= set((h - 1, x) for x in range(w))
-ignore |= set((y, 0) for y in range(h))
-ignore |= set((y, w - 1) for y in range(h))
+ignore  = {(0, x) for x in range(w)}
+ignore |= {(h - 1, x) for x in range(w)}
+ignore |= {(y, 0) for y in range(h)}
+ignore |= {(y, w - 1) for y in range(h)}
 
 def step(padded):
     padded += 1
     done = set()
-    todo = set((a[0], a[1]) for a in np.argwhere(padded > 9)) - ignore
+    todo = {(a[0], a[1]) for a in np.argwhere(padded > 9)} - ignore
     while todo:
         a = todo.pop()
         padded[a] = 0

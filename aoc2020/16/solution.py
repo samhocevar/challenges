@@ -31,7 +31,7 @@ invalid = [(n, v) for n, t in enumerate(tickets) for v in t if all(not is_valid(
 print(sum(v for _, v in invalid))
 
 # Part 2
-reject = set(n for n, _ in invalid)
+reject = {n for n, _ in invalid}
 valid = np.array([t for n, t in enumerate(tickets) if n not in reject])
 
 # Build a matrix with one row per field spec

@@ -42,7 +42,7 @@ def match_scanner(n1, refs):
     for r in range(24):
         ptlist1 = [rotate(p, r) for p in scanners[n1]]
         for n0 in refs:
-            ptset0 = set(scanners[n0])
+            ptset0 = {*scanners[n0]}
             found = False
             for ds, (i0, j0) in dists[n0].items():
                 p0 = scanners[n0][i0]
@@ -51,7 +51,7 @@ def match_scanner(n1, refs):
                 i1, j1 = dists[n1][ds]
                 for p1 in (ptlist1[i1], ptlist1[j1]):
                     delta = tuple(map(sub, p0, p1))
-                    if len(set(scanners[n0]) & set(tuple(map(add, p, delta)) for p in ptlist1)) >= 12:
+                    if len({*scanners[n0]} & {tuple(map(add, p, delta)) for p in ptlist1}) >= 12:
                         return r, delta
     return -1, 0
 

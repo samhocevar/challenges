@@ -20,7 +20,7 @@ for i in sorted(tmp):
     elif ranges[-1][1] < i[1]:
         ranges[-1][1] = i[1]
 
-print(sum(i[1] - i[0] for i in ranges) - len(set([s[2] for s in data if s[3] == y0])))
+print(sum(i[1] - i[0] for i in ranges) - len({s[2] for s in data if s[3] == y0}))
 
 # List all lozenge outlines (dilated 1)
 lines = []

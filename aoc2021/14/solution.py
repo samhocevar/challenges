@@ -4,7 +4,7 @@ rules = {}
 
 with open('input.txt') as f:
     chain = next(f).strip()
-    letters = set(chain)
+    letters = {*chain}
     next(f)
     for a, _, b in [l.strip().split(' ') for l in f]:
         rules[a] = [a[0] + b, b + a[1]]

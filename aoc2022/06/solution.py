@@ -5,4 +5,4 @@
 
 data = open('input.txt').read()
 for n in [4, 14]:
-    print(n + next(pos for pos, window in enumerate(zip(*(data[i:] for i in range(n)))) if len(set(window)) == n))
+    print(n + next(pos for pos, window in enumerate(zip(*(data[i:] for i in range(n)))) if len({*window}) == n))
