@@ -6,5 +6,3 @@ Fiddling with code challenges such as Advent of Code.
  - [Advent of Code 2020](/aoc2020/)
  - [Advent of Code 2019](/aoc2019/)
  - [Aquaq Challenge Hub](/aquaq/)
-
-Link to code contains sloc as computed by [SCC](https://github.com/boyter/scc).

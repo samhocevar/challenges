@@ -1,9 +1,9 @@
 ## Advent of Code 2023 — https://adventofcode.com/2023
 
-|   | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25🎅 |
-|---|----|----|----|----|----|----|----|----|----|----|----|----|
+ - Day 5: [Python](/aoc2023/05/solution.py) (17 locs)
+ - Day 4: [Python](/aoc2023/04/solution.py) (9 locs)
+ - Day 3: [Python](/aoc2023/03/solution.py) (9 locs)
+ - Day 2: [Python](/aoc2023/02/solution.py) (14 locs)
+ - Day 1: [Python](/aoc2023/01/solution.py) (12 locs)
 
-|   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
-|---|---|---|---|---|---|---|---|---|---|----|----|----|----|
-| Python | [12](/aoc2023/01/solution.py) | [14](/aoc2023/02/solution.py) | [9](/aoc2023/03/solution.py) | [9](/aoc2023/04/solution.py) | | | | | | | | | |
-
+(lines of code computed by [SCC](https://github.com/boyter/scc))
