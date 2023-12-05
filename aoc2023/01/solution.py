@@ -1,23 +1,19 @@
 #!/usr/bin/env python
 
-LUT = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', *map(str, range(1, 10))]
+from itertools import accumulate
 
-sum1, sum2 = 0, 0
+# Simple lookup table containing strings "1", "2", …, "9"
+lut = [str(n) for n in range(1, 10)]
+
+# If the string ends with a number, return its integer value, otherwise None
+find_number = lambda s: next((n % 9 + 1 for n, k in enumerate(lut) if s.endswith(k)), None)
 
 with open('input.txt') as f:
-    for line in f:
+    lines = f.readlines()
 
-        # Part 1: just convert all digit characters to integers and take the first and last elements
-        if digits := list(map(int, filter(str.isdigit, line))):
-            sum1 += 10 * digits[0] + digits[-1]
+# Part 1: find all digits and convert them to integers
+print(sum(10 * d[0] + d[-1] for d in (list(filter(None, map(find_number, accumulate(s)))) for s in lines)))
 
-        # If a number (word or single digit) is found at pos, return its integer value, otherwise None
-        def get_digit(pos):
-            return next((n % 9 + 1 for n, k in enumerate(LUT) if line[pos:].startswith(k)), None)
-
-        # Part 2: same but use a helper function that also understands words
-        if digits := list(filter(None, map(get_digit, range(len(line))))):
-            sum2 += 10 * digits[0] + digits[-1]
-
-print(sum1)
-print(sum2)
+# Part 2: also search for full words by extending the lookup table
+lut.extend(['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'])
+print(sum(10 * d[0] + d[-1] for d in (list(filter(None, map(find_number, accumulate(s)))) for s in lines)))
