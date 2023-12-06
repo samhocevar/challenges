@@ -8,3 +8,9 @@
  - Day 6: [Python](/aoc2023/06/solution.py) (8)
 
 (lines of code computed by [SCC](https://github.com/boyter/scc))
+
+## Links
+
+ * https://gitlab.nbnx.sh/nabnux/aoc23
+ * https://github.com/diffty/AdventOfCode2023
+ * https://github.com/TheNuSan/aoc23
