@@ -14,12 +14,12 @@
  | 10  | ⭐⭐  | [Python](/aoc2019/10/solution.py) (20) |
  | 11  | ⭐⭐  | [Python](/aoc2019/11/solution.py) (66) |
  | 12  | ⭐⭐  | [Python](/aoc2019/12/solution.py) (24) |
- | 13  |       | |
+ | 13  | ⭐    | [Python](/aoc2019/13/solution.py) (63) |
  | 14  | ⭐⭐  | [Python](/aoc2019/14/solution.py) (29) |
  | 15  |       | |
  | 16  | ⭐⭐  | [Python](/aoc2019/16/solution.py) (16) |
  | 17  |       | |
- | 18  |       | |
+ | 18  | ⭐    | [Python](/aoc2019/18/solution.py) (28) |
  | 19  |       | |
  | 20  |       | |
  | 21  |       | |
