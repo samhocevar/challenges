@@ -17,7 +17,7 @@
  | 13  |       | |
  | 14  | ⭐⭐  | [Python](/aoc2019/14/solution.py) (29) |
  | 15  |       | |
- | 16  | ⭐⭐  | [Python](/aoc2019/16/solution.py) (17) |
+ | 16  | ⭐⭐  | [Python](/aoc2019/16/solution.py) (16) |
  | 17  |       | |
  | 18  |       | |
  | 19  |       | |
