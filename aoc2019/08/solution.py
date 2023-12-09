@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 from functools import reduce
-from operator import or_
 import numpy as np
 
 w, h = 25, 6

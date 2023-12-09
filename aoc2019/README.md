@@ -9,7 +9,7 @@
  | 5   | ⭐⭐  | [Python](/aoc2019/05/solution.py) (25) |
  | 6   | ⭐⭐  | [Python](/aoc2019/06/solution.py) (13) |
  | 7   | ⭐⭐  | [Python](/aoc2019/07/solution.py) (45) |
- | 8   | ⭐⭐  | [Python](/aoc2019/08/solution.py) (11) |
+ | 8   | ⭐⭐  | [Python](/aoc2019/08/solution.py) (10) |
  | 9   | ⭐⭐  | [Python](/aoc2019/09/solution.py) (48) |
  | 10  | ⭐⭐  | [Python](/aoc2019/10/solution.py) (20) |
  | 11  | ⭐⭐  | [Python](/aoc2019/11/solution.py) (66) |
