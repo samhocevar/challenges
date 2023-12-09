@@ -14,5 +14,7 @@
  - Day 12: [Python](/aoc2019/12/solution.py) (24)
  - Day 13:
  - Day 14: [Python](/aoc2019/14/solution.py) (29)
+ - Day 15:
+ - Day 16: [Python](/aoc2019/16/solution.py) (17)
 
 (lines of code computed by [SCC](https://github.com/boyter/scc))
