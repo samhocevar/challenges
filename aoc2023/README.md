@@ -8,6 +8,7 @@
  - Day 6: [Python](/aoc2023/06/solution.py) (8)
  - Day 7: [Python](/aoc2023/07/solution.py) (7)
  - Day 8: [Python](/aoc2023/08/solution.py) (11)
+ - Day 9: [Python](/aoc2023/09/solution.py) (7)
 
 (lines of code computed by [SCC](https://github.com/boyter/scc))
 
