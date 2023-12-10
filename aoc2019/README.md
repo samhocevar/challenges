@@ -19,7 +19,7 @@
  | 15  |       | |
  | 16  | ⭐⭐  | [Python](/aoc2019/16/solution.py) (16) |
  | 17  |       | |
- | 18  | ⭐    | [Python](/aoc2019/18/solution.py) (28) |
+ | 18  | ⭐⭐  | [Python](/aoc2019/18/solution.py) (40) |
  | 19  |       | |
  | 20  |       | |
  | 21  |       | |
