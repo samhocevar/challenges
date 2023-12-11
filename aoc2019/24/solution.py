@@ -9,7 +9,7 @@ with open('input.txt') as f:
 bugs, seen = data, set()
 while True:
     tmp = np.pad(bugs, 1, constant_values=0)
-    tmp = tmp[1:6,:5] + tmp[1:6,2:] + tmp[:5,1:6] + tmp[2:,1:6]
+    tmp = tmp[1:-1,:-2] + tmp[1:-1,2:] + tmp[:-2,1:-1] + tmp[2:,1:-1]
     bugs = (abs(3 - bugs - 2 * tmp) <= 1).astype(int)
     bio = sum(x << n for n, x in enumerate(bugs.flat))
     if bio in seen: break
