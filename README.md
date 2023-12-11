@@ -6,8 +6,9 @@ a fast Python solution, so I fall back to C++ for the performance. Sometimes I c
 be bothered to do something elegant and I throw in a nasty Bash one-liner.
 
  - [Advent of Code 2023](/aoc2023/)
- - [Advent of Code 2022](/aoc2022/)
- - [Advent of Code 2021](/aoc2021/)
- - [Advent of Code 2020](/aoc2020/)
+ - [Advent of Code 2022](/aoc2022/) 50⭐
+ - [Advent of Code 2021](/aoc2021/) 50⭐
+ - [Advent of Code 2020](/aoc2020/) 50⭐
  - [Advent of Code 2019](/aoc2019/)
+ - [Advent of Code 2015](/aoc2015/)
  - [Aquaq Challenge Hub](/aquaq/)
