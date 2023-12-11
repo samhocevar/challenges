@@ -25,7 +25,7 @@
  | 21  |       | |
  | 22  | ⭐⭐  | [Python](/aoc2019/22/solution.py) (9) |
  | 23  |       | |
- | 24  |       | |
+ | 24  | ⭐⭐  | [Python](/aoc2019/24/solution.py) (33) |
  | 25  |       | |
 
 (lines of code computed by [SCC](https://github.com/boyter/scc))
