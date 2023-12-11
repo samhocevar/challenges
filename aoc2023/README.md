@@ -12,7 +12,7 @@
  | 8   | ⭐⭐  | [Python](/aoc2023/08/solution.py) (11) |
  | 9   | ⭐⭐  | [Python](/aoc2023/09/solution.py) (7) |
  | 10  | ⭐⭐  | [Python](/aoc2023/10/solution.py) (20) |
- | 11  |       | |
+ | 11  | ⭐⭐  | [Python](/aoc2023/11/solution.py) (9) |
  | 12  |       | |
  | 13  |       | |
  | 14  |       | |
