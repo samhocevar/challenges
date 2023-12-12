@@ -9,10 +9,10 @@ def combinations(s, r, n=0, cache=dict()):
     # Handle the easy cases:
     #  - if data is in cache, return the cached value
     #  - if rules are empty, return 1 unless there is still a # in the string, then 0
-    #  - if string is empty, return 0
+    #  - if string is too small to possibly match the rules, return 0
     if (s, r) in cache: return cache[(s, r)]
     elif not r: return int('#' not in s)
-    elif not s: return 0
+    elif len(s) < sum(r) + len(r) - 1: return 0
     # We now consider two (or three) different cases:
     #  - if string starts with '.', call combinations() recursively by stripping
     #    the first character and using the same rules.
