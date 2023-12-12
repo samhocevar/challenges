@@ -20,7 +20,7 @@
  | [16](https://adventofcode.com/2015/day/16) | ⭐⭐| [Python](/aoc2015/16/solution.py) (12) |
  | [17](https://adventofcode.com/2015/day/17) | ⭐⭐| [Python](/aoc2015/17/solution.py) (10) |
  | [18](https://adventofcode.com/2015/day/18) | ⭐⭐| [Python](/aoc2015/18/solution.py) (16) |
- | [19](https://adventofcode.com/2015/day/19) | | |
+ | [19](https://adventofcode.com/2015/day/19) | ⭐⭐| [Python](/aoc2015/19/solution.py) (12) |
  | [20](https://adventofcode.com/2015/day/20) | ⭐  | [Python](/aoc2015/20/solution.py) (18) |
  | [21](https://adventofcode.com/2015/day/21) | | |
  | [22](https://adventofcode.com/2015/day/22) | | |
