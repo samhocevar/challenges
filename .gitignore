@@ -1,3 +1,5 @@
 # Ignore cargo stuff
 Cargo.lock
 target
+# I often have input0.txt, input1.txt, etc. lying around
+input?.txt
