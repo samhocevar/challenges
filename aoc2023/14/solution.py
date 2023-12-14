@@ -1,15 +1,17 @@
 #!/usr/bin/env python
 
-from itertools import count
-from re import sub
+from itertools import chain, count
+from re import split
 
 with open('input.txt') as f: data = tuple(l.strip() for l in f.readlines())
 
 # Rotate (clockwise): transpose the map (zip) and reverse each line
 def rot(m): return tuple(''.join(reversed(l)) for l in zip(*m))
 
-# Tilt (eastwards): find all groups of 'O' and '.' and just sort them!
-def tilt(m): return tuple(sub("[O.]+", lambda g: ''.join(sorted(g.group(0))), s) for s in m)
+# Tilt (eastwards): split all lines along '#' and just sort each part!
+#   #.O..O. → #....OO
+#      #OO. → #.OO
+def tilt(m): return tuple(''.join(chain(*map(sorted, split('(?=#)', l)))) for l in m)
 
 # Compute load: count the 'O's on each line
 def load(m): return sum(n * l.count('O') for n, l in enumerate(reversed(m), 1))
