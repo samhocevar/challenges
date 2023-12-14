@@ -15,7 +15,7 @@
  | [11](https://adventofcode.com/2023/day/11) | ⭐⭐| [Python](/aoc2023/11/solution.py) (9) |
  | [12](https://adventofcode.com/2023/day/12) | ⭐⭐| [Python](/aoc2023/12/solution.py) (14) |
  | [13](https://adventofcode.com/2023/day/13) | ⭐⭐| [Python](/aoc2023/13/solution.py) (9) |
- | 14  |       | |
+ | [14](https://adventofcode.com/2023/day/14) | ⭐⭐| [Python](/aoc2023/14/solution.py) (13) |
  | 15  |       | |
  | 16  |       | |
  | 17  |       | |
