@@ -10,6 +10,7 @@ be bothered to do something elegant and I throw in a nasty Bash one-liner.
  - [Advent of Code 2021](/aoc2021/) 50⭐
  - [Advent of Code 2020](/aoc2020/) 50⭐
  - [Advent of Code 2019](/aoc2019/)
+ - [Advent of Code 2016](/aoc2016/)
  - [Advent of Code 2015](/aoc2015/) 50⭐
  - [Aquaq Challenge Hub](/aquaq/)
  - [Project Euler](/euler/)
