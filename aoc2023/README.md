@@ -17,16 +17,16 @@
  | [13](https://adventofcode.com/2023/day/13) | ⭐⭐| [Python](/aoc2023/13/solution.py) (9) |
  | [14](https://adventofcode.com/2023/day/14) | ⭐⭐| [Python](/aoc2023/14/solution.py) (13) |
  | [15](https://adventofcode.com/2023/day/15) | ⭐⭐| [Python](/aoc2023/15/solution.py) (10) |
- | 16  |       | |
- | 17  |       | |
- | 18  |       | |
- | 19  |       | |
- | 20  |       | |
- | 21  |       | |
- | 22  |       | |
- | 23  |       | |
- | 24  |       | |
- | 25  |       | |
+ | [16](https://adventofcode.com/2023/day/16) | ⭐⭐| [Python](/aoc2023/16/solution.py) (16) |
+ | [17](https://adventofcode.com/2023/day/17) | | |
+ | [18](https://adventofcode.com/2023/day/18) | | |
+ | [19](https://adventofcode.com/2023/day/19) | | |
+ | [20](https://adventofcode.com/2023/day/20) | | |
+ | [21](https://adventofcode.com/2023/day/21) | | |
+ | [22](https://adventofcode.com/2023/day/22) | | |
+ | [23](https://adventofcode.com/2023/day/23) | | |
+ | [24](https://adventofcode.com/2023/day/24) | | |
+ | [25](https://adventofcode.com/2023/day/25) | | |
 
 (lines of code computed by [SCC](https://github.com/boyter/scc))
 
