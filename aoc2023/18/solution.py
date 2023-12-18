@@ -1,28 +1,22 @@
 #!/usr/bin/env python
 
-from itertools import pairwise, batched
-from re import findall
+with open('input.txt') as f: data = [l.split() for l in f.readlines()]
 
-with open('input.txt') as f: data = [findall(r'\w+', l) for l in f.readlines()]
-
-def dig(data):
-    total, x, y, vlines, hlines = 0, 0, 0, [], []
-    # Run the digger and just build a list of all the vertical lines
+# Use the shoelace formula to compute the global area of the dug shape
+# (https://en.wikipedia.org/wiki/Shoelace_formula). Note that this is not
+# enough, we also need to dilate the shape by half a pixel because the dug
+# lines have thickness. To do so, we add the length of every upwards and
+# rightwards segment, and finally we add 1 because we did a full clockwise
+# (or anticlockwise) rotation by closing the shape.
+# Strong assumption: the path must not self-intersect!
+def dig(data, sa=0, sb=0, x2=0, y2=0):
     for d, n in data:
-        x, y, oldy = x + [n, 0, -n, 0][d], y + [0, -n, 0, n][d], y
-        if d % 2: vlines.append((x, oldy, y))
-    # Now consider all the rectangles formed by our Y coordinates and any relevant
-    # X coordinates. Don’t forget to remove the cells that were counted twice because
-    # they were also in the previous line.
-    for ymin, ymax in pairwise(sorted({y for _, y, _ in vlines})):
-        hlines, oldlines = list(sorted(x for x, y1, y2 in vlines if min(y1, y2) < (ymin + ymax) / 2 < max(y1, y2))), hlines
-        for xmin, xmax in batched(hlines, 2):
-            total += (ymax - ymin + 1) * (xmax - xmin + 1)
-            total -= sum(max(0, min(x2, xmax) - max(x1, xmin) + 1) for x1, x2 in batched(oldlines, 2))
-    return total
+        x2, y2, x1, y1 = x2 + [n, 0, -n, 0][d], y2 + [0, -n, 0, n][d], x2, y2
+        sa, sb = sa + (x2 * y1 - y2 * x1), sb + max(0, x2 - x1) + max(0, y2 - y1)
+    return abs(sa // 2) + sb + 1
 
 # Part 1: data is found in the first two columns
 print(dig([('RULD'.find(a), int(b)) for a, b, _ in data]))
 
 # Part 2: data is now found in the last column
-print(dig([(int(c[-1]), int(c[:-1], 16)) for _, _, c in data]))
+print(dig([(int(c[-2]), int(c[2:-2], 16)) for _, _, c in data]))
