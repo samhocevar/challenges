@@ -16,10 +16,10 @@
  | [12](https://adventofcode.com/2016/day/12) | ⭐⭐| [Python](/aoc2016/12/solution.py) (11) |
  | [13](https://adventofcode.com/2016/day/13) | ⭐⭐| [Python](/aoc2016/13/solution.py) (14) |
  | [14](https://adventofcode.com/2016/day/14) | ⭐⭐| [Python](/aoc2016/14/solution.py) (24) |
- | [15](https://adventofcode.com/2016/day/15) | | |
- | [16](https://adventofcode.com/2016/day/16) | | |
+ | [15](https://adventofcode.com/2016/day/15) | ⭐⭐| [Python](/aoc2016/15/solution.py) (7) |
+ | [16](https://adventofcode.com/2016/day/16) | ⭐⭐| [Python](/aoc2016/16/solution.py) (9) |
  | [17](https://adventofcode.com/2016/day/17) | | |
- | [18](https://adventofcode.com/2016/day/18) | | |
+ | [18](https://adventofcode.com/2016/day/18) | ⭐⭐| [Python](/aoc2016/18/solution.py) (8) |
  | [19](https://adventofcode.com/2016/day/19) | | |
  | [20](https://adventofcode.com/2016/day/20) | | |
  | [21](https://adventofcode.com/2016/day/21) | | |
