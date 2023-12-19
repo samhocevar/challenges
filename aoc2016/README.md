@@ -25,7 +25,7 @@
  | [21](https://adventofcode.com/2016/day/21) | ⭐⭐| [Python](/aoc2016/21/solution.py) (18) |
  | [22](https://adventofcode.com/2016/day/22) | ⭐⭐| [Python](/aoc2016/22/solution.py) (5) |
  | [23](https://adventofcode.com/2016/day/23) | | |
- | [24](https://adventofcode.com/2016/day/24) | | |
+ | [24](https://adventofcode.com/2016/day/24) | ⭐⭐| [Python](/aoc2016/24/solution.py) (19) (poor solution) |
  | [25](https://adventofcode.com/2016/day/25) | ⭐  | [Python](/aoc2016/25/solution.py) (19) |
 
 (lines of code computed by [SCC](https://github.com/boyter/scc))
