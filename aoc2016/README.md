@@ -22,7 +22,7 @@
  | [18](https://adventofcode.com/2016/day/18) | ⭐⭐| [Python](/aoc2016/18/solution.py) (8) |
  | [19](https://adventofcode.com/2016/day/19) | | |
  | [20](https://adventofcode.com/2016/day/20) | ⭐⭐| [Python](/aoc2016/20/solution.py) (7) |
- | [21](https://adventofcode.com/2016/day/21) | | |
+ | [21](https://adventofcode.com/2016/day/21) | ⭐⭐| [Python](/aoc2016/21/solution.py) (18) |
  | [22](https://adventofcode.com/2016/day/22) | | |
  | [23](https://adventofcode.com/2016/day/23) | | |
  | [24](https://adventofcode.com/2016/day/24) | | |
