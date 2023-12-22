@@ -21,8 +21,8 @@
  | [17](https://adventofcode.com/2023/day/17) | ⭐⭐| [Python](/aoc2023/17/solution.py) (18) |
  | [18](https://adventofcode.com/2023/day/18) | ⭐⭐| [Python](/aoc2023/18/solution.py) (8) |
  | [19](https://adventofcode.com/2023/day/19) | ⭐⭐| [Python](/aoc2023/19/solution.py) (18) |
- | [20](https://adventofcode.com/2023/day/20) | ⭐⭐| [Python](/aoc2023/19/solution.py) (24) |
- | [21](https://adventofcode.com/2023/day/21) | | |
+ | [20](https://adventofcode.com/2023/day/20) | ⭐⭐| [Python](/aoc2023/20/solution.py) (24) |
+ | [21](https://adventofcode.com/2023/day/21) | ⭐⭐| [Python](/aoc2023/21/solution.py) (18) |
  | [22](https://adventofcode.com/2023/day/22) | | |
  | [23](https://adventofcode.com/2023/day/23) | | |
  | [24](https://adventofcode.com/2023/day/24) | | |
