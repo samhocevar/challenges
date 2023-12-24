@@ -23,7 +23,7 @@
  | [19](https://adventofcode.com/2023/day/19) | ⭐⭐| [Python](/aoc2023/19/solution.py) (18) |
  | [20](https://adventofcode.com/2023/day/20) | ⭐⭐| [Python](/aoc2023/20/solution.py) (24) |
  | [21](https://adventofcode.com/2023/day/21) | ⭐⭐| [Python](/aoc2023/21/solution.py) (18) |
- | [22](https://adventofcode.com/2023/day/22) | | |
+ | [22](https://adventofcode.com/2023/day/22) | ⭐⭐| [Python](/aoc2023/22/solution.py) (22) |
  | [23](https://adventofcode.com/2023/day/23) | | |
  | [24](https://adventofcode.com/2023/day/24) | | |
  | [25](https://adventofcode.com/2023/day/25) | | |
