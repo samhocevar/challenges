@@ -25,7 +25,7 @@
  | [21](https://adventofcode.com/2023/day/21) | ⭐⭐| [Python](/aoc2023/21/solution.py) (18) |
  | [22](https://adventofcode.com/2023/day/22) | ⭐⭐| [Python](/aoc2023/22/solution.py) (22) |
  | [23](https://adventofcode.com/2023/day/23) | | |
- | [24](https://adventofcode.com/2023/day/24) | | |
+ | [24](https://adventofcode.com/2023/day/24) | ⭐⭐| [Python](/aoc2023/24/solution.py) (32) |
  | [25](https://adventofcode.com/2023/day/25) | | |
 
 (lines of code computed by [SCC](https://github.com/boyter/scc))
