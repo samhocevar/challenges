@@ -17,8 +17,8 @@ nodes += [(x, y) for y in range(1, h - 1) for x in range(1, w - 1) if data[y][x]
 
 # Visit all paths starting at (x0, y0) and return all reachable nodes,
 # treating wrongly oriented slopes as blockers.
-def visit(x0, y0):
-    todo, done = [(0, x0, y0)], set()
+def visit(n0):
+    todo, done = [(0, *nodes[n0])], set()
     while todo:
         cost, x, y = heappop(todo)
         if (x, y) not in done:
@@ -27,25 +27,25 @@ def visit(x0, y0):
                 if data[y][x] not in ('.', '>^<v'[d]): continue
                 x2, y2 = x + [1, 0, -1, 0][d], y + [0, -1, 0, 1][d]
                 if x2 < 0 or y2 < 0 or x2 >= w or y2 >= h: continue
-                if (x2, y2) in nodes and (x2, y2) != (x0, y0): yield x2, y2, cost + 1; break
+                if (x2, y2) in nodes and (x2, y2) != nodes[n0]: yield nodes.index((x2, y2)), cost + 1; break
                 heappush(todo, (cost + 1, x2, y2))
 
 # “paths” are oriented paths between nodes
-paths = {(x, y): set(visit(x, y)) for x, y in nodes}
+paths = {n: list(visit(n)) for n in range(len(nodes))}
 
 # Enumerate the costs of all valid paths
 def all_paths(src, dst):
-    todo = [(0, {src}, *src)]
+    todo = [(0, src, 1 << src)]
     while todo:
-        cost, visited, x, y = todo.pop()
-        for x2, y2, l in paths[(x, y)]:
-            if (x2, y2) == dst: yield cost + l
-            elif (x2, y2) not in visited: todo.append((cost + l, visited | {(x2, y2)}, x2, y2))
+        cost, n, visited = todo.pop()
+        for n2, l in paths[n]:
+            if n2 == dst: yield cost + l
+            elif (1 << n2) & visited == 0: todo.append((cost + l, n2, visited | (1 << n2)))
 
 # Part 1: try all paths and print the length of the longest one
-print(max(all_paths(nodes[0], nodes[1])))
+print(max(all_paths(0, 1)))
 
 # Part 2: mark all return trips as valid and run all_paths again
-for src, dst, l in ((a, b[:2], b[2]) for a, v in list(paths.items()) for b in v):
-    paths[dst] = paths.get(dst, set()) | {(*src, l)}
-print(max(all_paths(nodes[0], nodes[1])))
+for src, dst, w in ((a, b, w) for a, v in list(paths.items()) for b, w in v):
+    paths[dst] = [(src, w), *paths.get(dst, list())]
+print(max(all_paths(0, 1)))
