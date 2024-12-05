@@ -6,5 +6,6 @@
  | [2](https://adventofcode.com/2024/day/2)   | ⭐⭐| [Python](/aoc2024/02/solution.py) (6) |
  | [3](https://adventofcode.com/2024/day/3)   | ⭐⭐| [Python](/aoc2025/03/solution.py) (5) |
  | [4](https://adventofcode.com/2024/day/4)   | ⭐⭐| [Python](/aoc2025/04/solution.py) (6) |
+ | [5](https://adventofcode.com/2024/day/5)   | ⭐⭐| [Python](/aoc2025/05/solution.py) (17) |
 
 (lines of code computed by [SCC](https://github.com/boyter/scc))
